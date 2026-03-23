@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ReactiveFormsModule ,FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-investment-goal',
   templateUrl: './investment-goal.component.html',
-  styleUrls: ['./investment-goal.component.scss']
+  styleUrls: ['./investment-goal.component.css']
 })
 export class InvestmentGoalComponent {
   goalForm: FormGroup;
   calculatedResult: any = null;
   annualReturnRate = 8; // Default annual return rate
+  minYear = new Date().getFullYear() + 1;
   
   goals = [
     { name: 'Retirement', target: 5000000, current: 2500000, years: 15, icon: 'elderly' },
@@ -29,7 +30,7 @@ export class InvestmentGoalComponent {
 
   calculateInvestment() {
     if (this.goalForm.valid) {
-      const formData = this.calculatedResult.totalYears.value;
+      const formData = this.goalForm.value;
       const years = formData.targetYear - new Date().getFullYear();
       const futureValue = formData.targetAmount - formData.currentAmount;
       const rate = formData.annualReturn / 100;
