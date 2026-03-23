@@ -1,0 +1,199 @@
+<div class="investment-goal">
+  <div class="goal-header">
+    <h2><i class="material-icons">target</i> Investment Goals Calculator</h2>
+    <p class="subtitle">Plan your financial future with precision</p>
+  </div>
+
+  <div class="goal-content">
+    <!-- Existing Goals -->
+    <div class="existing-goals">
+      <h3>Your Current Goals</h3>
+      <div class="goals-list">
+        <div class="goal-item" *ngFor="let goal of goals">
+          <div class="goal-icon">
+            <i class="material-icons">{{goal.icon}}</i>
+          </div>
+          <div class="goal-details">
+            <div class="goal-name">{{goal.name}}</div>
+            <div class="goal-target">Target: ₹ {{goal.target.toLocaleString('en-IN')}}</div>
+            <div class="goal-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" [style.width]="getGoalProgress(goal) + '%'"></div>
+              </div>
+              <div class="progress-text">
+                <span>₹ {{goal.current.toLocaleString('en-IN')}}</span>
+                <span>{{getGoalProgress(goal).toFixed(1)}}%</span>
+              </div>
+            </div>
+            <div class="goal-time">{{goal.years}} years remaining</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Goal Calculator -->
+    <div class="goal-calculator">
+      <h3>Calculate New Goal</h3>
+      
+      <form [formGroup]="goalForm" (ngSubmit)="calculateInvestment()" class="calculator-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="goalName">
+              <i class="material-icons">label</i>
+              Goal Name
+            </label>
+            <input 
+              type="text" 
+              id="goalName" 
+              formControlName="goalName"
+              placeholder="e.g., Retirement, House, Car"
+              class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="targetAmount">
+              <i class="material-icons">currency_rupee</i>
+              Target Amount (₹)
+            </label>
+            <input 
+              type="number" 
+              id="targetAmount" 
+              formControlName="targetAmount"
+              placeholder="Enter target amount"
+              class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="currentAmount">
+              <i class="material-icons">account_balance</i>
+              Current Savings (₹)
+            </label>
+            <input 
+              type="number" 
+              id="currentAmount" 
+              formControlName="currentAmount"
+              placeholder="Amount already saved"
+              class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label for="targetYear">
+              <i class="material-icons">calendar_today</i>
+              Target Year
+            </label>
+            <input 
+              type="number" 
+              id="targetYear" 
+              formControlName="targetYear"
+              [min]="new Date().getFullYear() + 1"
+              placeholder="e.g., 2030"
+              class="form-input">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="annualReturn">
+              <i class="material-icons">trending_up</i>
+              Expected Annual Return Rate (%)
+            </label>
+            <div class="slider-container">
+              <input 
+                type="range" 
+                id="annualReturn" 
+                formControlName="annualReturn"
+                min="0" 
+                max="30" 
+                step="0.5"
+                class="form-slider">
+              <span class="slider-value">{{goalForm.get('annualReturn')?.value}}%</span>
+            </div>
+            <div class="slider-ticks">
+              <span>Conservative (5%)</span>
+              <span>Moderate (10%)</span>
+              <span>Aggressive (15%)</span>
+            </div>
+          </div>
+        </div>
+
+        <button 
+          type="submit" 
+          class="calculate-btn"
+          [disabled]="!goalForm.valid">
+          <i class="material-icons">calculate</i>
+          Calculate Investment Plan
+        </button>
+      </form>
+
+      <!-- Results -->
+      <div class="calculation-results" *ngIf="calculatedResult">
+        <h4>Investment Plan for "{{goalForm.get('goalName')?.value}}"</h4>
+        
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-icon">
+              <i class="material-icons">calendar_today</i>
+            </div>
+            <div class="result-content">
+              <div class="result-label">Time Period</div>
+              <div class="result-value">{{calculatedResult.totalYears}} years</div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-icon">
+              <i class="material-icons">currency_rupee</i>
+            </div>
+            <div class="result-content">
+              <div class="result-label">Monthly Investment</div>
+              <div class="result-value">₹ {{calculatedResult.monthlyInvestment.toLocaleString('en-IN')}}</div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-icon">
+              <i class="material-icons">savings</i>
+            </div>
+            <div class="result-content">
+              <div class="result-label">Annual Investment</div>
+              <div class="result-value">₹ {{calculatedResult.annualInvestment.toLocaleString('en-IN')}}</div>
+            </div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-icon">
+              <i class="material-icons">account_balance</i>
+            </div>
+            <div class="result-content">
+              <div class="result-label">Total Investment</div>
+              <div class="result-value">₹ {{calculatedResult.totalInvestment.toLocaleString('en-IN')}}</div>
+            </div>
+          </div>
+
+          <div class="result-card highlight">
+            <div class="result-icon">
+              <i class="material-icons">target</i>
+            </div>
+            <div class="result-content">
+              <div class="result-label">Expected Final Value</div>
+              <div class="result-value">₹ {{calculatedResult.expectedValue.toLocaleString('en-IN')}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="action-btn save-btn">
+            <i class="material-icons">save</i>
+            Save This Plan
+          </button>
+          <button class="action-btn export-btn">
+            <i class="material-icons">download</i>
+            Export Report
+          </button>
+          <button class="action-btn reset-btn" (click)="calculatedResult = null">
+            <i class="material-icons">refresh</i>
+            Calculate Another
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

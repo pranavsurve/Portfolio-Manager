@@ -1,0 +1,87 @@
+<div class="portfolio-summary">
+  <div class="summary-header">
+    <h2><i class="material-icons">dashboard</i> Portfolio Overview</h2>
+    <div class="time-filter">
+      <button class="time-btn active">1M</button>
+      <button class="time-btn">6M</button>
+      <button class="time-btn">1Y</button>
+      <button class="time-btn">All</button>
+    </div>
+  </div>
+
+  <div class="summary-content">
+    <!-- Total Value Card -->
+    <div class="total-value-card">
+      <div class="value-content">
+        <div class="value-label">Total Portfolio Value</div>
+        <div class="value-amount">₹ {{totalPortfolio.toLocaleString('en-IN')}}</div>
+        <div class="value-growth positive">
+          <i class="material-icons">trending_up</i>
+          +{{monthlyGrowth}}% this month
+        </div>
+      </div>
+      <div class="value-chart">
+        <div class="chart-placeholder">
+          <!-- In real app, replace with actual chart -->
+          <div class="chart-line"></div>
+          <div class="chart-line"></div>
+          <div class="chart-line"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="material-icons">trending_up</i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-label">Yearly Growth</div>
+          <div class="stat-value positive">+{{yearlyGrowth}}%</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="material-icons">security</i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-label">Risk Level</div>
+          <div class="stat-value">{{riskLevel}}</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="material-icons">pie_chart</i>
+        </div>
+        <div class="stat-info">
+          <div class="stat-label">Asset Classes</div>
+          <div class="stat-value">4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Distribution Chart -->
+    <div class="distribution-section">
+      <h3>Portfolio Distribution</h3>
+      <div class="distribution-chart">
+        <div class="chart-visual">
+          <div class="pie-chart">
+            <!-- Simplified pie chart using CSS -->
+            <div class="pie-slice" *ngFor="let item of portfolioDistribution" 
+                 [style]="{'--percentage': item.value + '%', '--color': item.color}"></div>
+          </div>
+        </div>
+        <div class="chart-legend">
+          <div class="legend-item" *ngFor="let item of portfolioDistribution">
+            <div class="legend-color" [style.background]="item.color"></div>
+            <div class="legend-label">{{item.name}}</div>
+            <div class="legend-value">{{item.value}}%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
