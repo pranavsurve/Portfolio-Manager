@@ -1,0 +1,120 @@
+<div class="portfolio-dashboard">
+  <!-- Header -->
+  <header class="dashboard-header">
+    <div class="header-content">
+      <div class="logo-section">
+        <h1><i class="material-icons">account_balance_wallet</i> WealthTrack</h1>
+        <p class="subtitle">Your Complete Financial Portfolio</p>
+      </div>
+      <div class="user-info">
+        <div class="user-avatar">
+          <i class="material-icons">person</i>
+        </div>
+        <div class="user-details">
+          <span class="user-name">John Doe</span>
+          <span class="user-status">Premium Member</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <i class="material-icons">dashboard</i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">trending_up</i>
+          <span>Investments</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">savings</i>
+          <span>Fixed Deposits</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">account_balance</i>
+          <span>Real Estate</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">pie_chart</i>
+          <span>Mutual Funds</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">target</i>
+          <span>Goals</span>
+        </a>
+        <a href="#" class="nav-item">
+          <i class="material-icons">settings</i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <!-- Quick Stats -->
+      <div class="quick-stats">
+        <h3>Quick Stats</h3>
+        <div class="stat-item">
+          <span class="stat-label">Total Portfolio</span>
+          <span class="stat-value">₹ 45,87,000</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Monthly Growth</span>
+          <span class="stat-value positive">+2.4%</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Goals Achieved</span>
+          <span class="stat-value">3/5</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="content-area">
+      <!-- Portfolio Summary -->
+      <app-portfolio-summary></app-portfolio-summary>
+
+      <!-- Investment Goals Section -->
+      <app-investment-goal></app-investment-goal>
+
+      <!-- Asset Cards Grid -->
+      <div class="assets-grid">
+        <app-asset-card 
+          [title]="'Fixed Deposits'" 
+          [amount]="1250000" 
+          [icon]="'savings'"
+          [growth]="6.5"
+          [items]="3">
+        </app-asset-card>
+
+        <app-asset-card 
+          [title]="'Stocks (Demat)'" 
+          [amount]="1875000" 
+          [icon]="'trending_up'"
+          [growth]="12.3"
+          [items]="15">
+        </app-asset-card>
+
+        <app-asset-card 
+          [title]="'Mutual Funds'" 
+          [amount]="985000" 
+          [icon]="'pie_chart'"
+          [growth]="8.7"
+          [items]="8">
+        </app-asset-card>
+
+        <app-asset-card 
+          [title]="'Real Estate'" 
+          [amount]="470000" 
+          [icon]="'account_balance'"
+          [growth]="4.2"
+          [items]="2">
+        </app-asset-card>
+      </div>
+
+      <!-- Chart Section -->
+      <app-portfolio-chart></app-portfolio-chart>
+    </div>
+  </main>
+</div>
