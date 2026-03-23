@@ -1,0 +1,59 @@
+<div class="portfolio-chart">
+  <div class="chart-header">
+    <h3><i class="material-icons">show_chart</i> Portfolio Performance</h3>
+    <div class="chart-actions">
+      <button class="chart-action-btn">
+        <i class="material-icons">download</i>
+        Export
+      </button>
+      <button class="chart-action-btn">
+        <i class="material-icons">filter_alt</i>
+        Filter
+      </button>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <div class="chart-y-axis">
+      <div class="y-label">₹ 50L</div>
+      <div class="y-label">₹ 40L</div>
+      <div class="y-label">₹ 30L</div>
+      <div class="y-label">₹ 20L</div>
+      <div class="y-label">₹ 10L</div>
+    </div>
+
+    <div class="chart-main">
+      <div class="chart-bars">
+        <div class="chart-bar" *ngFor="let data of performanceData" 
+             [style.height]="getBarHeight(data.value)">
+          <div class="bar-value">₹ {{(data.value / 100000).toFixed(1)}}L</div>
+          <div class="bar-month">{{data.month}}</div>
+        </div>
+      </div>
+      <div class="chart-grid">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-footer">
+    <div class="chart-stats">
+      <div class="stat">
+        <div class="stat-label">6M Return</div>
+        <div class="stat-value positive">+9.2%</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Best Month</div>
+        <div class="stat-value">May (+2.3%)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Volatility</div>
+        <div class="stat-value">Low</div>
+      </div>
+    </div>
+  </div>
+</div>

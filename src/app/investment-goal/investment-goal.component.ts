@@ -29,7 +29,7 @@ export class InvestmentGoalComponent {
 
   calculateInvestment() {
     if (this.goalForm.valid) {
-      const formData = this.goalForm.value;
+      const formData = this.calculatedResult.totalYears.value;
       const years = formData.targetYear - new Date().getFullYear();
       const futureValue = formData.targetAmount - formData.currentAmount;
       const rate = formData.annualReturn / 100;

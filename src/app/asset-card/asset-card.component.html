@@ -1,0 +1,30 @@
+<div class="asset-card">
+  <div class="card-header">
+    <div class="asset-icon" [style.background]="'rgba(' + this.getIconColor() + ', 0.1)'">
+      <i class="material-icons" [style.color]="getIconColor()">{{icon}}</i>
+    </div>
+    <div class="asset-title">{{title}}</div>
+    <div class="asset-menu">
+      <i class="material-icons">more_vert</i>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="asset-amount">₹ {{amount.toLocaleString('en-IN')}}</div>
+    <div class="asset-growth" [class.positive]="growth >= 0" [class.negative]="growth < 0">
+      <i class="material-icons">{{growth >= 0 ? 'trending_up' : 'trending_down'}}</i>
+      {{growth >= 0 ? '+' : ''}}{{growth}}%
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="asset-items">
+      <i class="material-icons">list</i>
+      {{items}} {{items === 1 ? 'Item' : 'Items'}}
+    </div>
+    <button class="view-details-btn">
+      View Details
+      <i class="material-icons">arrow_forward</i>
+    </button>
+  </div>
+</div>

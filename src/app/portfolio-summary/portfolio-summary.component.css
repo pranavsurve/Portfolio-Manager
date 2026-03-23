@@ -1,0 +1,266 @@
+.portfolio-summary {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.portfolio-summary .summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-summary .summary-header h2 {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.portfolio-summary .summary-header h2 i {
+  color: #4fc3f7;
+}
+
+.portfolio-summary .summary-header .time-filter {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.portfolio-summary .summary-header .time-filter .time-btn {
+  padding: 0.5rem 1rem;
+  background: rgba(50, 50, 50, 0.8);
+  border: 1px solid #444;
+  color: #aaa;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolio-summary .summary-header .time-filter .time-btn:hover {
+  background: rgba(79, 195, 247, 0.1);
+  color: #4fc3f7;
+}
+
+.portfolio-summary .summary-header .time-filter .time-btn.active {
+  background: rgba(79, 195, 247, 0.2);
+  color: #4fc3f7;
+  border-color: #4fc3f7;
+}
+
+.portfolio-summary .summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.portfolio-summary .total-value-card {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(40, 40, 40, 0.9) 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #444;
+}
+
+.portfolio-summary .total-value-card .value-content .value-label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-summary .total-value-card .value-content .value-amount {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.portfolio-summary .total-value-card .value-content .value-growth {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.portfolio-summary .total-value-card .value-content .value-growth.positive {
+  color: #4caf50;
+}
+
+.portfolio-summary .total-value-card .value-content .value-growth i {
+  font-size: 1.2rem;
+}
+
+.portfolio-summary .total-value-card .value-chart {
+  width: 150px;
+  height: 80px;
+}
+
+.portfolio-summary .total-value-card .value-chart .chart-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-summary .total-value-card .value-chart .chart-placeholder .chart-line {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to top, #4fc3f7, transparent);
+  border-radius: 3px 3px 0 0;
+  animation: chartWave 2s ease-in-out infinite;
+}
+
+.portfolio-summary .total-value-card .value-chart .chart-placeholder .chart-line:nth-child(1) {
+  left: 10%;
+  height: 60%;
+  animation-delay: 0s;
+}
+
+.portfolio-summary .total-value-card .value-chart .chart-placeholder .chart-line:nth-child(2) {
+  left: 40%;
+  height: 80%;
+  animation-delay: 0.2s;
+}
+
+.portfolio-summary .total-value-card .value-chart .chart-placeholder .chart-line:nth-child(3) {
+  left: 70%;
+  height: 40%;
+  animation-delay: 0.4s;
+}
+
+.portfolio-summary .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.portfolio-summary .stats-grid .stat-card {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #333;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-summary .stats-grid .stat-card:hover {
+  transform: translateY(-2px);
+  border-color: #4fc3f7;
+}
+
+.portfolio-summary .stats-grid .stat-card .stat-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(79, 195, 247, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-summary .stats-grid .stat-card .stat-icon i {
+  font-size: 1.8rem;
+  color: #4fc3f7;
+}
+
+.portfolio-summary .stats-grid .stat-card .stat-info .stat-label {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.portfolio-summary .stats-grid .stat-card .stat-info .stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.portfolio-summary .stats-grid .stat-card .stat-info .stat-value.positive {
+  color: #4caf50;
+}
+
+.portfolio-summary .distribution-section h3 {
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.portfolio-summary .distribution-section .distribution-chart {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-visual {
+  flex: 1;
+  max-width: 200px;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-visual .pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  background: conic-gradient(
+    var(--color) 0% var(--percentage),
+    transparent var(--percentage) 100%
+  );
+  animation: pieRotate 10s linear infinite;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-legend {
+  flex: 2;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-legend .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  background: rgba(50, 50, 50, 0.8);
+  border-radius: 8px;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-legend .legend-item .legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-legend .legend-item .legend-label {
+  flex: 1;
+  color: #fff;
+  font-weight: 500;
+}
+
+.portfolio-summary .distribution-section .distribution-chart .chart-legend .legend-item .legend-value {
+  color: #aaa;
+  font-weight: 600;
+}
+
+@keyframes chartWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pieRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

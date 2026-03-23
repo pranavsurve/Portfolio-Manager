@@ -1,0 +1,401 @@
+.investment-goal {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.investment-goal .goal-header {
+  margin-bottom: 2rem;
+}
+
+.investment-goal .goal-header h2 {
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.investment-goal .goal-header h2 i {
+  color: #ff9800;
+}
+
+.investment-goal .goal-header .subtitle {
+  margin: 0.5rem 0 0 0;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.investment-goal .goal-content {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .investment-goal .goal-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.investment-goal .existing-goals h3 {
+  color: #fff;
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.investment-goal .existing-goals .goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.investment-goal .existing-goals .goal-item {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.investment-goal .existing-goals .goal-item:hover {
+  border-color: #ff9800;
+  transform: translateX(5px);
+}
+
+.investment-goal .existing-goals .goal-item .goal-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 152, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.investment-goal .existing-goals .goal-item .goal-icon i {
+  font-size: 1.8rem;
+  color: #ff9800;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details {
+  flex: 1;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-name {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-target {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-progress {
+  margin-bottom: 0.5rem;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-progress .progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-progress .progress-bar .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9800, #ff5722);
+  border-radius: 3px;
+  transition: width 1s ease;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-progress .progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.investment-goal .existing-goals .goal-item .goal-details .goal-time {
+  font-size: 0.9rem;
+  color: #4fc3f7;
+}
+
+.investment-goal .goal-calculator h3 {
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .investment-goal .goal-calculator .calculator-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.investment-goal .goal-calculator .calculator-form .form-grid .form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group label i {
+  font-size: 1.2rem;
+  color: #4fc3f7;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .form-input {
+  width: 100%;
+  padding: 0.8rem;
+  background: rgba(50, 50, 50, 0.8);
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .form-input:focus {
+  outline: none;
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .form-input::placeholder {
+  color: #666;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-container .form-slider {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-container .form-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4fc3f7;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-container .form-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4fc3f7;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-container .slider-value {
+  min-width: 50px;
+  text-align: center;
+  font-weight: 600;
+  color: #4fc3f7;
+}
+
+.investment-goal .goal-calculator .calculator-form .form-group .slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.investment-goal .goal-calculator .calculator-form .calculate-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.investment-goal .goal-calculator .calculator-form .calculate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.investment-goal .goal-calculator .calculator-form .calculate-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.investment-goal .goal-calculator .calculator-form .calculate-btn i {
+  font-size: 1.2rem;
+}
+
+.investment-goal .goal-calculator .calculation-results {
+  margin-top: 2rem;
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid #444;
+  animation: slideIn 0.5s ease;
+}
+
+.investment-goal .goal-calculator .calculation-results h4 {
+  color: #fff;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card {
+  background: rgba(30, 30, 30, 0.9);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #333;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card.highlight {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card .result-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(79, 195, 247, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card .result-icon i {
+  font-size: 1.8rem;
+  color: #4fc3f7;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card .result-content .result-label {
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.investment-goal .goal-calculator .calculation-results .results-grid .result-card .result-content .result-value {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn i {
+  font-size: 1.2rem;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.save-btn {
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+  border: 1px solid #4caf50;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.save-btn:hover {
+  background: rgba(76, 175, 80, 0.3);
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.export-btn {
+  background: rgba(102, 126, 234, 0.2);
+  color: #667eea;
+  border: 1px solid #667eea;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.export-btn:hover {
+  background: rgba(102, 126, 234, 0.3);
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.reset-btn {
+  background: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+  border: 1px solid #ff9800;
+}
+
+.investment-goal .goal-calculator .calculation-results .action-buttons .action-btn.reset-btn:hover {
+  background: rgba(255, 152, 0, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

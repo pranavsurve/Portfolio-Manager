@@ -1,0 +1,141 @@
+.asset-card {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 15px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.asset-card:hover {
+  transform: translateY(-5px);
+  border-color: #4fc3f7;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.asset-card:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4fc3f7, #667eea);
+}
+
+.asset-card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.asset-card .card-header .asset-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.asset-card .card-header .asset-icon i {
+  font-size: 1.8rem;
+}
+
+.asset-card .card-header .asset-title {
+  flex: 1;
+  margin-left: 1rem;
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.asset-card .card-header .asset-menu {
+  color: #666;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.asset-card .card-header .asset-menu:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.asset-card .card-body {
+  margin-bottom: 1.5rem;
+}
+
+.asset-card .card-body .asset-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.asset-card .card-body .asset-growth {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.asset-card .card-body .asset-growth.positive {
+  color: #4caf50;
+}
+
+.asset-card .card-body .asset-growth.negative {
+  color: #f44336;
+}
+
+.asset-card .card-body .asset-growth i {
+  font-size: 1.2rem;
+}
+
+.asset-card .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #333;
+}
+
+.asset-card .card-footer .asset-items {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.asset-card .card-footer .asset-items i {
+  font-size: 1.2rem;
+}
+
+.asset-card .card-footer .view-details-btn {
+  background: rgba(79, 195, 247, 0.1);
+  color: #4fc3f7;
+  border: 1px solid #4fc3f7;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.asset-card .card-footer .view-details-btn:hover {
+  background: rgba(79, 195, 247, 0.2);
+  transform: translateX(5px);
+}
+
+.asset-card .card-footer .view-details-btn i {
+  font-size: 1rem;
+}
